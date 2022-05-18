@@ -2,6 +2,7 @@ function lengthOfLIS(nums: number[]): number {
 
     const LIS  = Array(nums.length).fill(1)
     
+    //O(n^2)
     for(let i=0;i<nums.length;i++){
         for(let j=i-1; j >=0; j--){
             if(nums[j] < nums[i]){
