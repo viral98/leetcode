@@ -10,7 +10,6 @@ function canJump(nums: number[]): boolean {
     let canReachGoal = false
     
     const isGoalReachable = (maxJumpsThatCanBeTakenFromCurrentIndex: number, distanceToGoal: number) => {
-        console.log("max jumps ",maxJumpsThatCanBeTakenFromCurrentIndex, " goalIndex", distanceToGoal )
         if(maxJumpsThatCanBeTakenFromCurrentIndex >= distanceToGoal){
             return true
         }
