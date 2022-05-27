@@ -8,22 +8,26 @@ function removeDuplicates(s: string, k: number): string {
     
     for(let i=1;i<s.length;i++){
         
-        const top = stack[stack.length-1]
+        if(stack.length > 0){
+             const top = stack[stack.length-1]
+        
+            if(top && top[CHARACTER] === s[i]){
+                top[NUMBER_OF_REPEATS]++;
 
-        if(top && top[CHARACTER] === s[i]){
-            top[NUMBER_OF_REPEATS]++;
-
-            if(top[NUMBER_OF_REPEATS] === k){
-                stack.pop()
+                if(top[NUMBER_OF_REPEATS] === k){
+                    stack.pop()
+                }else{
+                    stack.pop()
+                    stack.push(top)
+                }
             }else{
-                stack.pop()
-                stack.push(top)
+                stack.push([s[i], 1])
             }
         }else{
             stack.push([s[i], 1])
         }
-    }
        
+    }
     
     let newString =""
     
