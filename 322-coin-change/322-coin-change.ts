@@ -18,6 +18,8 @@ function coinChange(coins: number[], amount: number): number {
     
     for(let i=0; i<dp.length; i++){
         for(let coin of coins){
+            
+            //Here i is the amount we are trying to compute, as a result, if we were trying to compute coins that add up to 2, and the coin value is 10 then there's no point of trying to calculate anything using this coin
             if(i-coin >= 0){
                 //This could possibly be a solution
                 
